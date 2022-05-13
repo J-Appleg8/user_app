@@ -17,12 +17,12 @@ function App() {
   };
 
   return (
-    <div>
+    <>
       <section>
         <AddUser onAddUser={addUserHandler} />
         <UsersList users={usersList} />
       </section>
-    </div>
+    </>
   );
 }
 
