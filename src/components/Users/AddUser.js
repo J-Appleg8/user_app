@@ -10,11 +10,8 @@ const AddUser = props => {
   // nameInputRef: will later become a real DOM element
   // - The first time React reaches and renders the ref= code in the return statement,
   // - it will set the value stored in nameInputRef to the native DOM element that is rendered based on the input
-  // In general
   const nameInputRef = useRef();
   const ageInputRef = useRef();
-  // const [enteredUsername, setEnteredUsername] = useState('');
-  // const [enteredAge, setEnteredAge] = useState('');
   const [error, setError] = useState();
 
   const addUserHandler = event => {
@@ -24,7 +21,6 @@ const AddUser = props => {
     const enteredUserAge = ageInputRef.current.value;
 
     // Checks if either of the input fields are blank
-    // if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
     if (enteredName.trim().length === 0 || enteredUserAge.trim().length === 0) {
       setError({
         title: 'Invalid input',
@@ -43,19 +39,9 @@ const AddUser = props => {
     // Executes the onAddUser property that was set for the <AddUser /> component in App
     props.onAddUser(enteredName, enteredUserAge);
     // Clears out the data from the input fields after submitting the data
-    // setEnteredUsername('');
-    // setEnteredAge('');
     nameInputRef.current.value = '';
     ageInputRef.current.value = '';
   };
-
-  // const usernameChangeHandler = event => {
-  //   setEnteredUsername(event.target.value);
-  // };
-
-  // const ageChangeHandler = event => {
-  //   setEnteredAge(event.target.value);
-  // };
 
   const errorHandler = () => {
     setError(null);
@@ -75,23 +61,11 @@ const AddUser = props => {
         <form onSubmit={addUserHandler}>
           <div>
             <label htmlFor="username">Username</label>
-            <input
-              id="username"
-              type="text"
-              // value={enteredUsername}
-              // onChange={usernameChangeHandler}
-              ref={nameInputRef}
-            ></input>
+            <input id="username" type="text" ref={nameInputRef}></input>
           </div>
           <div>
             <label htmlFor="age">Age (Years)</label>
-            <input
-              id="age"
-              type="number"
-              // value={enteredAge}
-              // onChange={ageChangeHandler}
-              ref={ageInputRef}
-            ></input>
+            <input id="age" type="number" ref={ageInputRef}></input>
           </div>
           <Button type="submit">Add User</Button>
         </form>
