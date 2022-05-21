@@ -1,4 +1,4 @@
-## <u>JSX Limitations:</u>
+## <span style="color:lightgreen">JSX Limitations:</span>
 
 <p></p>
 
@@ -11,6 +11,8 @@
   );
 ```
 
+### <span style="color:turquoise">Problem:</span>
+
 You can't return more than one "root" JSX element (you also can't store more than one "root" JSX element in a variable)
 
 - The top level element can have children but it must only be one element
@@ -21,7 +23,7 @@ Reason for this is the same as in regular JavaScript:
 - Ex: you cant return two numbers, strings etc
   - You can return an array of numbers or string, but that is now a different value (and is now returning one array)
 
-Solution:
+### <span style="color:turquoise">Solution:</span>
 
 - You can just wrap the adjacent elements in a `<div>` or any element
 - Main thing that matters is that there is a single value returned
@@ -34,15 +36,16 @@ Another work around is to wrap everything in a Javascript array []
 
 ---
 
-## <u>Creating a Wrapper Component:</u>
+## <span style="color:lightgreen">Creating a Wrapper Component:</span>
 
 <p></p>
 
 Wrapping adjacent elements with a `<div>` tag all the time can create a new problem, '`<div>` Soup' where there are many unnecessary `<div>` tags rendered in the HTML
 
-Solution 1:
+### <span style="color:turquoise">Solution 1:</span>
 
-- Create a wrapper component that just returns props.children
+Create a wrapper component that just returns props.children
+
 - Avoids an extra `<div>` created
 
 ```javascript
@@ -79,7 +82,7 @@ return (
 
 ---
 
-## <u>React Fragments:</u>
+## <span style="color:lightgreen">React Fragments:</span>
 
 <p></p>
 
@@ -111,7 +114,7 @@ return (
 
 ---
 
-## <u>React Portals:</u>
+## <span style="color:lightgreen">React Portals:</span>
 
 <p></p>
 
@@ -174,11 +177,11 @@ renders as (with Portal):
 
 ---
 
-## <u>Creating a Portal:</u>
+## <span style="color:lightgreen">Creating a Portal:</span>
 
 <p></p>
 
-### react-dom:
+### <span style="color:turquoise">react-dom:</span>
 
 <p></p>
 
@@ -196,7 +199,7 @@ react-dom uses React to bring that logic, and those features, into the web brows
 import ReactDOM from 'react-dom';
 ```
 
-### createPortal():
+### <span style="color:turquoise">createPortal():</span>
 
 <p></p>
 
@@ -287,7 +290,7 @@ export default ErrorModal;
 
 ---
 
-## <u>Using ref's:</u>
+## <span style="color:lightgreen">Using ref's:</span>
 
 <p></p>
 
